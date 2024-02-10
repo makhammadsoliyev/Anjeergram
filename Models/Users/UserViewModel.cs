@@ -7,7 +7,7 @@ public class UserViewModel
     public string LastName { get; set; }
     public string UserName { get; set; }
     public string Email { get; set; }
-    public string Picture { get; set; }
+    public string PictureUrl { get; set; }
     public long Followers { get; set; }
     public long Followings { get; set; }
     public DateTime Date { get; set; }
