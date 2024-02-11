@@ -11,4 +11,4 @@ public interface ICommentLikeService
     Task<IEnumerable<CommentLikeViewModel>> GetAllAsync();
     Task<IEnumerable<CommentLikeViewModel>> GetAllByUserIdAsync(long userId);
     Task<IEnumerable<CommentLikeViewModel>> GetAllByCommentIdAsync(long commentId);
-} 
+}

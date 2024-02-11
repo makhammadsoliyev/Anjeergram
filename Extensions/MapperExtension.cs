@@ -1,13 +1,13 @@
-﻿using Anjeergram.Models.CommentLikes;
+﻿using Anjeergram.Models.Categories;
+using Anjeergram.Models.CommentLikes;
 using Anjeergram.Models.Comments;
 using Anjeergram.Models.Messages;
+using Anjeergram.Models.PostCategories;
 using Anjeergram.Models.PostLikes;
 using Anjeergram.Models.Posts;
-using Anjeergram.Models.Users;
-using Anjeergram.Models.Tags;
 using Anjeergram.Models.PostTags;
-using Anjeergram.Models.Categories;
-using Anjeergram.Models.PostCategories;
+using Anjeergram.Models.Tags;
+using Anjeergram.Models.Users;
 
 namespace Anjeergram.Extensions;
 
@@ -161,7 +161,7 @@ public static class MapperExtension
             EditedAt = model.EditedAt,
         };
     }
-    
+
 
     public static Tag ToMapMain(this TagCreationModel model)
     {
@@ -195,8 +195,8 @@ public static class MapperExtension
         return new PostTagViewModel()
         {
             Tag = tag,
-            Post = post, 
-            Id = post.Id,  
+            Post = post,
+            Id = post.Id,
         };
     }
 
