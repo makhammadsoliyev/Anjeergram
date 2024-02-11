@@ -68,7 +68,7 @@ public class PostCategoryService : IPostCategoryService
     {
         var category = await categoryService.GetByIdAsync(categoryId);
         postCategories = await FileIO.ReadAsync<PostCategory>(Constants.POST_CATEGORIES_PATH);
-        postCategories = postCategories.FindAll(pc => !pc.IsDeleted);
+        postCategories = postCategories.FindAll(pc => !pc.IsDeleted && pc.CategoryId == categoryId);
         var result = new List<PostCategoryViewModel>();
 
         foreach (var pc in postCategories)
@@ -84,7 +84,7 @@ public class PostCategoryService : IPostCategoryService
     {
         var post = await postService.GetByIdAsync(postId);
         postCategories = await FileIO.ReadAsync<PostCategory>(Constants.POST_CATEGORIES_PATH);
-        postCategories = postCategories.FindAll(pc => !pc.IsDeleted);
+        postCategories = postCategories.FindAll(pc => !pc.IsDeleted && pc.PostId == postId);
         var result = new List<PostCategoryViewModel>();
 
         foreach (var pc in postCategories)

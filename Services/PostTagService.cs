@@ -68,7 +68,7 @@ public class PostTagService : IPostTagService
     {
         var post = await postService.GetByIdAsync(postId);
         postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
-        postTags = postTags.FindAll(pt => !pt.IsDeleted);
+        postTags = postTags.FindAll(pt => !pt.IsDeleted && pt.PostId == postId);
         var result = new List<PostTagViewModel>();
 
         foreach (var postTag in postTags)
@@ -84,7 +84,7 @@ public class PostTagService : IPostTagService
     {
         var tag = await tagService.GetByIdAsync(tagId);
         postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
-        postTags = postTags.FindAll(pt => !pt.IsDeleted);
+        postTags = postTags.FindAll(pt => !pt.IsDeleted && pt.TagId == tagId);
         var result = new List<PostTagViewModel>();
 
         foreach (var postTag in postTags)
