@@ -23,6 +23,8 @@ public class UserService : IUserService
         var createdUser = user.ToMapMain();
         createdUser.Id = users.GenerateId();
 
+        users.Add(createdUser);
+
         await FileIO.WriteAsync(Constants.USERS_PATH, users);
 
         return createdUser.ToMapView();
