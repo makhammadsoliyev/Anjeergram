@@ -18,11 +18,23 @@ public static class MapperExtension
         return new User()
         {
             Email = model.Email,
-            PictureUrl = model.PictureUrl,
-            Password = model.Password,
             UserName = model.UserName,
             LastName = model.LastName,
+            Password = model.Password,
             FirstName = model.FirstName,
+            PictureUrl = model.PictureUrl,
+        };
+    }
+
+    public static UserUpdateModel ToMapUpdate(this UserCreationModel model)
+    {
+        return new UserUpdateModel()
+        {
+            Email = model.Email,
+            Password = model.Password,
+            LastName = model.LastName,
+            FirstName = model.FirstName,
+            PictureUrl = model.PictureUrl,
         };
     }
 
@@ -33,11 +45,11 @@ public static class MapperExtension
             Id = model.Id,
             Date = model.Date,
             Email = model.Email,
-            PictureUrl = model.PictureUrl,
             UserName = model.UserName,
             LastName = model.LastName,
             FirstName = model.FirstName,
             Followers = model.Followers,
+            PictureUrl = model.PictureUrl,
             Followings = model.Followings,
         };
     }
