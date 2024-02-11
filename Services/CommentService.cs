@@ -107,7 +107,7 @@ public class CommentService : ICommentService
         return result;
     }
 
-    public async Task<CommentViewModel> GetById(long id)
+    public async Task<CommentViewModel> GetByIdAsync(long id)
     {
         comments = await FileIO.ReadAsync<Comment>(Constants.COMMENTS_PATH);
         var comment = comments.FirstOrDefault(c => !c.IsDeleted && c.Id == id)
