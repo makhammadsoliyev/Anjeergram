@@ -7,4 +7,5 @@ public class PostCreationModel
     public string Description { get; set; }
     public string Content { get; set; }
     public string PictureUrl { get; set; }
+    public DateTime Date { get; set; } = DateTime.UtcNow;
 }

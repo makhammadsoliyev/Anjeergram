@@ -8,5 +8,5 @@ public class Message : Auditable
     public long TargetUserId { get; set; }
     public string Content { get; set; }
     public DateTime EditedAt { get; set; }
-    public DateTime Date { get; set; } = DateTime.UtcNow;
+    public DateTime Date { get; set; }
 }

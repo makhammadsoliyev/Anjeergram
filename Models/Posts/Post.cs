@@ -11,5 +11,5 @@ public class Post : Auditable
     public string PictureUrl { get; set; }
     public long Likes { get; set; }
     public DateTime EditedAt { get; set; }
-    public DateTime Date { get; set; } = DateTime.UtcNow;
+    public DateTime Date { get; set; }
 }
