@@ -43,7 +43,7 @@ public class CategoryService : ICategoryService
         return categories.FindAll(c => !c.IsDeleted).Select(c => c.ToMapView());
     }
 
-    public async Task<CategoryViewModel> GetById(long id)
+    public async Task<CategoryViewModel> GetByIdAsync(long id)
     {
         categories = await FileIO.ReadAsync<Category>(Constants.CATEGORIES_PATH);
         var category = categories.FirstOrDefault(c => !c.IsDeleted && c.Id == id)
