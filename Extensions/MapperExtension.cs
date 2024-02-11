@@ -4,6 +4,10 @@ using Anjeergram.Models.Messages;
 using Anjeergram.Models.PostLikes;
 using Anjeergram.Models.Posts;
 using Anjeergram.Models.Users;
+using Anjeergram.Models.Tags;
+using Anjeergram.Models.PostTags;
+using Anjeergram.Models.Categories;
+using Anjeergram.Models.PostCategories;
 
 namespace Anjeergram.Extensions;
 
@@ -155,6 +159,84 @@ public static class MapperExtension
             SourceUser = sourceUser,
             TargetUser = targetUser,
             EditedAt = model.EditedAt,
+        };
+    }
+    
+
+    public static Tag ToMapMain(this TagCreationModel model)
+    {
+        return new Tag()
+        {
+            Name = model.Name,
+        };
+    }
+
+    public static TagViewModel ToMapView(this Tag model)
+    {
+        return new TagViewModel()
+        {
+            Id = model.Id,
+            Name = model.Name,
+        };
+    }
+
+
+    public static PostTag ToMapMain(this PostTagCreationModel model)
+    {
+        return new PostTag()
+        {
+            PostId = model.PostId,
+            TagId = model.TagId,
+        };
+    }
+
+    public static PostTagViewModel ToMapView(this PostTag model, PostViewModel post, TagViewModel tag)
+    {
+        return new PostTagViewModel()
+        {
+            Tag = tag,
+            Post = post, 
+            Id = post.Id,  
+        };
+    }
+
+
+    public static Category ToMapMain(this CategoryCreationModel model)
+    {
+        return new Category()
+        {
+            Name = model.Name,
+            Description = model.Description,
+        };
+    }
+
+    public static CategoryViewModel ToMapView(this Category model)
+    {
+        return new CategoryViewModel()
+        {
+            Id = model.Id,
+            Name = model.Name,
+            Description = model.Description,
+        };
+    }
+
+
+    public static PostCategory ToMapMain(this PostCategoryCreationModel model)
+    {
+        return new PostCategory()
+        {
+            PostId = model.PostId,
+            CategoryId = model.CategoryId,
+        };
+    }
+
+    public static PostCategoryViewModel ToMapView(this PostCategory model, CategoryViewModel category, PostViewModel post)
+    {
+        return new PostCategoryViewModel()
+        {
+            Post = post,
+            Id = model.Id,
+            Category = category,
         };
     }
 }
