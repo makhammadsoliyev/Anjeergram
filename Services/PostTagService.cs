@@ -22,7 +22,7 @@ public class PostTagService : IPostTagService
     {
         var tag = await tagService.GetByIdAsync(postTag.TagId);
         var post = await postService.GetByIdAsync(postTag.PostId);
-        var postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
+        postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
 
         var createdPostTag = postTag.ToMapMain();
         createdPostTag.Id = postTags.GenerateId();
@@ -36,7 +36,7 @@ public class PostTagService : IPostTagService
 
     public async Task<bool> DeleteAsync(long id)
     {
-        var postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
+        postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
         var postTag = postTags.FirstOrDefault(pt => pt.Id == id && !pt.IsDeleted)
             ?? throw new Exception($"PostTag was not found with this id: {id}");
 
@@ -50,7 +50,7 @@ public class PostTagService : IPostTagService
 
     public async Task<IEnumerable<PostTagViewModel>> GetAllAsync()
     {
-        var postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
+        postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
         postTags = postTags.FindAll(pt => !pt.IsDeleted);
         var result = new List<PostTagViewModel>();
 
@@ -67,7 +67,7 @@ public class PostTagService : IPostTagService
     public async Task<IEnumerable<PostTagViewModel>> GetAllByPostIdAsync(long postId)
     {
         var post = await postService.GetByIdAsync(postId);
-        var postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
+        postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
         postTags = postTags.FindAll(pt => !pt.IsDeleted);
         var result = new List<PostTagViewModel>();
 
@@ -83,7 +83,7 @@ public class PostTagService : IPostTagService
     public async Task<IEnumerable<PostTagViewModel>> GetAllByTagIdAsync(long tagId)
     {
         var tag = await tagService.GetByIdAsync(tagId);
-        var postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
+        postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
         postTags = postTags.FindAll(pt => !pt.IsDeleted);
         var result = new List<PostTagViewModel>();
 
@@ -99,7 +99,7 @@ public class PostTagService : IPostTagService
 
     public async Task<PostTagViewModel> GetById(long id)
     {
-        var postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
+        postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
         var postTag = postTags.FirstOrDefault(pt => pt.Id == id && !pt.IsDeleted)
             ?? throw new Exception($"PostTag was not found with this id: {id}");
         var tag = await tagService.GetByIdAsync(postTag.TagId);
