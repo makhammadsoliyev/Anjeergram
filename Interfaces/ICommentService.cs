@@ -9,8 +9,8 @@ public interface ICommentService
     Task<CommentViewModel> UpdateAsync(long id, CommentUpdateModel comment);
     Task<bool> DeleteAsync(long id);
     Task<IEnumerable<CommentViewModel>> GetAllAsync();
-    Task<IEnumerable<CommentViewModel>> GetAllAsyncByUserId(long userId);
-    Task<IEnumerable<CommentViewModel>> GetAllAsyncByPostId(long postId);
+    Task<IEnumerable<CommentViewModel>> GetAllByUserIdAsync(long userId);
+    Task<IEnumerable<CommentViewModel>> GetAllByPostIdAsync(long postId);
     Task<long> IncrementLikeAsync(long id);
     Task<long> DecrementLikeAsync(long id);
 }

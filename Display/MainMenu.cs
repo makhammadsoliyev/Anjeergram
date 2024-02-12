@@ -49,7 +49,7 @@ public class MainMenu
         postMenu = new PostMenu(postService);
         followMenu = new FollowMenu();
         postTagMenu = new PostTagMenu(postTagService);
-        commentMenu = new CommentMenu();
+        commentMenu = new CommentMenu(commentService);
         messageMenu = new MessageMenu();
         categoryMenu = new CategoryMenu(categoryService);
         postLikeMenu = new PostLikeMenu(postLikeService);

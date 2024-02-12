@@ -1,0 +1,28 @@
+[
+  {
+    "UserId": 2,
+    "PostId": 2,
+    "Content": "assssssssssssss",
+    "Likes": 0,
+    "EditedAt": "0001-01-01T00:00:00",
+    "Date": "0001-01-01T00:00:00",
+    "Id": 1,
+    "CreatedAt": "2024-02-12T08:26:12.4000294Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "2024-02-12T08:28:47.1893524Z",
+    "IsDeleted": true
+  },
+  {
+    "UserId": 2,
+    "PostId": 2,
+    "Content": "assssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "Likes": 0,
+    "EditedAt": "2024-02-12T08:30:56.0570421Z",
+    "Date": "2024-02-12T08:28:25.29959Z",
+    "Id": 2,
+    "CreatedAt": "2024-02-12T08:28:25.3018754Z",
+    "UpdatedAt": "2024-02-12T08:30:56.0610424Z",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
+  }
+]

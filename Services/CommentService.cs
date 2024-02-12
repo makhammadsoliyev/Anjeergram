@@ -27,6 +27,8 @@ public class CommentService : ICommentService
         var createdComment = comment.ToMapMain();
         createdComment.Id = comments.GenerateId();
 
+        comments.Add(createdComment);
+
         await FileIO.WriteAsync(Constants.COMMENTS_PATH, comments);
 
         return createdComment.ToMapView(user, post);
@@ -75,7 +77,7 @@ public class CommentService : ICommentService
         return result;
     }
 
-    public async Task<IEnumerable<CommentViewModel>> GetAllAsyncByPostId(long postId)
+    public async Task<IEnumerable<CommentViewModel>> GetAllByPostIdAsync(long postId)
     {
         var post = await postService.GetByIdAsync(postId);
         comments = await FileIO.ReadAsync<Comment>(Constants.COMMENTS_PATH);
@@ -91,7 +93,7 @@ public class CommentService : ICommentService
         return result;
     }
 
-    public async Task<IEnumerable<CommentViewModel>> GetAllAsyncByUserId(long userId)
+    public async Task<IEnumerable<CommentViewModel>> GetAllByUserIdAsync(long userId)
     {
         var user = await userService.GetByIdAsync(userId);
         comments = await FileIO.ReadAsync<Comment>(Constants.COMMENTS_PATH);

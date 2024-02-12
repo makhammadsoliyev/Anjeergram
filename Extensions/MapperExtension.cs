@@ -112,6 +112,7 @@ public static class MapperExtension
     {
         return new Comment()
         {
+            Date = model.Date,
             UserId = model.UserId,
             PostId = model.PostId,
             Content = model.Content,
