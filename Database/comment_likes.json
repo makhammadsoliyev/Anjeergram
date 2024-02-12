@@ -1,0 +1,22 @@
+[
+  {
+    "UserId": 2,
+    "CommentId": 2,
+    "Date": "0001-01-01T00:00:00",
+    "Id": 1,
+    "CreatedAt": "2024-02-12T08:52:20.1476399Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "2024-02-12T08:57:11.1170525Z",
+    "IsDeleted": true
+  },
+  {
+    "UserId": 2,
+    "CommentId": 2,
+    "Date": "2024-02-12T08:57:25.5886198Z",
+    "Id": 2,
+    "CreatedAt": "2024-02-12T08:57:25.5927995Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
+  }
+]

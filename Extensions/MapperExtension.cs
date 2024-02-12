@@ -140,6 +140,7 @@ public static class MapperExtension
         {
             CommentId = model.CommentId,
             UserId = model.UserId,
+            Date = model.Date,
         };
     }
 

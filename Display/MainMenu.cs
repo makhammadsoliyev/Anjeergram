@@ -53,7 +53,7 @@ public class MainMenu
         messageMenu = new MessageMenu();
         categoryMenu = new CategoryMenu(categoryService);
         postLikeMenu = new PostLikeMenu(postLikeService);
-        commentLikeMenu = new CommentLikeMenu();
+        commentLikeMenu = new CommentLikeMenu(commentLikeService);
         postCategoryMenu = new PostCategoryMenu(postCategoryService);
     }
 

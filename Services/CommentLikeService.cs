@@ -29,7 +29,8 @@ public class CommentLikeService : ICommentLikeService
 
         commentLikes.Add(createdLike);
 
-        await FileIO.WriteAsync(Constants.COMMENTS_PATH, commentLikes);
+        await commentService.IncrementLikeAsync(commentLike.CommentId);
+        await FileIO.WriteAsync(Constants.COMMENT_LIKES_PATH, commentLikes);
 
         return createdLike.ToMapView(user, comment);
     }
@@ -43,7 +44,8 @@ public class CommentLikeService : ICommentLikeService
         like.IsDeleted = true;
         like.DeletedAt = DateTime.UtcNow;
 
-        await FileIO.WriteAsync(Constants.COMMENTS_PATH, commentLikes);
+        await commentService.DecrementLikeAsync(like.CommentId);
+        await FileIO.WriteAsync(Constants.COMMENT_LIKES_PATH, commentLikes);
 
         return true;
     }
@@ -119,7 +121,7 @@ public class CommentLikeService : ICommentLikeService
         existLike.CommentId = commentLike.CommentId;
         existLike.UserId = commentLike.UserId;
 
-        await FileIO.WriteAsync(Constants.COMMENTS_PATH, commentLikes);
+        await FileIO.WriteAsync(Constants.COMMENT_LIKES_PATH, commentLikes);
 
         return existLike.ToMapView(user, comment);
     }
