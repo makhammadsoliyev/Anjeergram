@@ -90,6 +90,7 @@ public static class MapperExtension
     {
         return new PostLike()
         {
+            Date = model.Date,
             PostId = model.PostId,
             UserId = model.UserId,
         };

@@ -1,4 +1,5 @@
-﻿using Anjeergram.Models.Posts;
+﻿using Anjeergram.Models.PostLikes;
+using Anjeergram.Models.Posts;
 using Anjeergram.Models.Users;
 using Spectre.Console;
 
@@ -6,6 +7,28 @@ namespace Anjeergram.Display;
 
 public class SelectionMenu
 {
+    public Table DataTable(string title, params PostLikeViewModel[] likes)
+    {
+        var table = new Table();
+
+        table.Title(title.ToUpper())
+            .BorderColor(Color.Blue)
+            .AsciiBorder();
+
+        table.AddColumn("ID");
+        table.AddColumn("User");
+        table.AddColumn("Post");
+        table.AddColumn("Date");
+
+        foreach (var t in likes)
+            table.AddRow(t.Id.ToString(), $"{t.User.FirstName} {t.User.LastName}", t.Post.Title, t.Date.ToString());
+
+        table.Border = TableBorder.Rounded;
+        table.Centered();
+
+        return table;
+    }
+
     public Table DataTable(string title, params PostViewModel[] posts)
     {
         var table = new Table();
