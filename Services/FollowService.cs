@@ -29,8 +29,8 @@ public class FollowService : IFollowService
 
         follows.Add(createdFollow);
 
-        await userService.IncrementFollowAsync(createdFollow.FollowingUserId, true);
-        await userService.IncrementFollowAsync(createdFollow.FollowedUserId, false);
+        await userService.IncrementFollowAsync(createdFollow.FollowingUserId, false);
+        await userService.IncrementFollowAsync(createdFollow.FollowedUserId, true);
         await FileIO.WriteAsync(Constants.FOLLOWS_PATH, follows);
 
         return createdFollow.ToMapView(follower, following);
@@ -45,8 +45,8 @@ public class FollowService : IFollowService
         follow.IsDeleted = true;
         follow.DeletedAt = DateTime.UtcNow;
 
-        await userService.DecrementFollowAsync(follow.FollowingUserId, true);
-        await userService.DecrementFollowAsync(follow.FollowedUserId, false);
+        await userService.DecrementFollowAsync(follow.FollowingUserId, false);
+        await userService.DecrementFollowAsync(follow.FollowedUserId, true);
         await FileIO.WriteAsync(Constants.FOLLOWS_PATH, follows);
 
         return true;
