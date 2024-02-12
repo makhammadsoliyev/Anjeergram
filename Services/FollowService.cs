@@ -20,6 +20,8 @@ public class FollowService : IFollowService
     {
         var follower = await userService.GetByIdAsync(follow.FollowedUserId);
         var following = await userService.GetByIdAsync(follow.FollowingUserId);
+        if (follower.Id == following.Id)
+            throw new Exception("follower and following cannot be one person");
         follows = await FileIO.ReadAsync<Follow>(Constants.FOLLOWS_PATH);
 
         var createdFollow = follow.ToMapMain();

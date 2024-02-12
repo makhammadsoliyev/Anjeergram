@@ -60,6 +60,7 @@ public static class MapperExtension
     {
         return new Post()
         {
+            Date = model.Date,
             Title = model.Title,
             UserId = model.UserId,
             Content = model.Content,
