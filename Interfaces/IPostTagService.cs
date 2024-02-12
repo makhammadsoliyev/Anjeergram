@@ -5,7 +5,7 @@ namespace Anjeergram.Interfaces;
 public interface IPostTagService
 {
     Task<PostTagViewModel> AddAsync(PostTagCreationModel postTag);
-    Task<PostTagViewModel> GetById(long id);
+    Task<PostTagViewModel> GetByIdAsync(long id);
     Task<bool> DeleteAsync(long id);
     Task<IEnumerable<PostTagViewModel>> GetAllAsync();
     Task<IEnumerable<PostTagViewModel>> GetAllByTagIdAsync(long tagId);

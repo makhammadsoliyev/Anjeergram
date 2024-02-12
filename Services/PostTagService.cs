@@ -97,7 +97,7 @@ public class PostTagService : IPostTagService
 
     }
 
-    public async Task<PostTagViewModel> GetById(long id)
+    public async Task<PostTagViewModel> GetByIdAsync(long id)
     {
         postTags = await FileIO.ReadAsync<PostTag>(Constants.POST_TAGS_PATH);
         var postTag = postTags.FirstOrDefault(pt => pt.Id == id && !pt.IsDeleted)
