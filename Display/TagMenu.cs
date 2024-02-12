@@ -1,7 +1,5 @@
 ﻿using Anjeergram.Interfaces;
-using Anjeergram.Models.Categories;
 using Anjeergram.Models.Tags;
-using Anjeergram.Services;
 using Spectre.Console;
 
 namespace Anjeergram.Display;

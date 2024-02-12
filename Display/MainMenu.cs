@@ -66,7 +66,7 @@ public class MainMenu
         {
             AnsiConsole.Clear();
             var selection = selectionDisplay.ShowSelectionMenu(
-                "Choose one of options", 
+                "Choose one of options",
                 new string[] { "User", "Post", "PostLike", "Category", "PostCategory", "Tag", "PostTag", "Comment", "CommentLike", "Message", "Follow", "Exit" });
 
             switch (selection)

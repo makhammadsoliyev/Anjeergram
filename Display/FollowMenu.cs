@@ -1,7 +1,5 @@
 ﻿using Anjeergram.Interfaces;
 using Anjeergram.Models.Follows;
-using Anjeergram.Models.Messages;
-using Anjeergram.Services;
 using Spectre.Console;
 
 namespace Anjeergram.Display;

@@ -1,7 +1,5 @@
 ﻿using Anjeergram.Interfaces;
 using Anjeergram.Models.CommentLikes;
-using Anjeergram.Models.PostLikes;
-using Anjeergram.Services;
 using Spectre.Console;
 
 namespace Anjeergram.Display;
