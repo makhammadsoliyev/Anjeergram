@@ -2,7 +2,6 @@
 using Anjeergram.Extensions;
 using Anjeergram.Helpers;
 using Anjeergram.Interfaces;
-using Anjeergram.Models.Categories;
 using Anjeergram.Models.PostCategories;
 
 namespace Anjeergram.Services;

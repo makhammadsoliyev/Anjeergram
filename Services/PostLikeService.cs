@@ -40,7 +40,7 @@ public class PostLikeService : IPostLikeService
         postLikes = await FileIO.ReadAsync<PostLike>(Constants.POST_LIKES_PATH);
         var like = postLikes.FirstOrDefault(p => p.Id == id && !p.IsDeleted)
             ?? throw new Exception($"PostLike was not found with this id: {id}");
-        
+
         like.IsDeleted = true;
         like.DeletedAt = DateTime.UtcNow;
 

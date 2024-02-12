@@ -1,6 +1,7 @@
 ﻿using Anjeergram.Models.Categories;
 using Anjeergram.Models.CommentLikes;
 using Anjeergram.Models.Comments;
+using Anjeergram.Models.Follows;
 using Anjeergram.Models.Messages;
 using Anjeergram.Models.PostCategories;
 using Anjeergram.Models.PostLikes;
@@ -249,6 +250,27 @@ public static class MapperExtension
             Post = post,
             Id = model.Id,
             Category = category,
+        };
+    }
+
+    public static Follow ToMapMain(this FollowCreationModel model)
+    {
+        return new Follow()
+        {
+            Date = model.Date,
+            FollowedUserId = model.FollowedUserId,
+            FollowingUserId = model.FollowingUserId,
+        };
+    }
+
+    public static FollowViewModel ToMapView(this Follow model, UserViewModel follower, UserViewModel following)
+    {
+        return new FollowViewModel()
+        {
+            Id = model.Id,
+            Date = model.Date,
+            FollowedUser = follower,
+            FollowingUser = following,
         };
     }
 }

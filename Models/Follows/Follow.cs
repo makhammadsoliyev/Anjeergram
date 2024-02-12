@@ -1,6 +1,8 @@
-﻿namespace Anjeergram.Models.Follows;
+﻿using Anjeergram.Models.Commons;
 
-public class Follow
+namespace Anjeergram.Models.Follows;
+
+public class Follow : Auditable
 {
     public long FollowingUserId { get; set; }
     public long FollowedUserId { get; set; }

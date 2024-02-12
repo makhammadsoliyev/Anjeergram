@@ -8,7 +8,7 @@ namespace Anjeergram.Services;
 
 public class UserService : IUserService
 {
-    private List<User> users; 
+    private List<User> users;
 
     public async Task<UserViewModel> AddAsync(UserCreationModel user)
     {
@@ -28,6 +28,23 @@ public class UserService : IUserService
         await FileIO.WriteAsync(Constants.USERS_PATH, users);
 
         return createdUser.ToMapView();
+    }
+
+    public async Task<long> DecrementFollowAsync(long id, bool isFollowing = false)
+    {
+        users = await FileIO.ReadAsync<User>(Constants.USERS_PATH);
+        var user = users.FirstOrDefault(u => u.Id == id && !u.IsDeleted)
+            ?? throw new Exception($"User was not found with this id: {id}");
+
+        long result;
+        if (isFollowing)
+            result = --user.Followings;
+        else
+            result = --user.Followers;
+
+        await FileIO.WriteAsync(Constants.USERS_PATH, users);
+
+        return result;
     }
 
     public async Task<bool> DeleteAsync(long id)
@@ -57,6 +74,23 @@ public class UserService : IUserService
             ?? throw new Exception($"User was not found with this id: {id}");
 
         return user.ToMapView();
+    }
+
+    public async Task<long> IncrementFollowAsync(long id, bool isFollowing = false)
+    {
+        users = await FileIO.ReadAsync<User>(Constants.USERS_PATH);
+        var user = users.FirstOrDefault(u => u.Id == id && !u.IsDeleted)
+            ?? throw new Exception($"User was not found with this id: {id}");
+
+        long result;
+        if (isFollowing)
+            result = ++user.Followings;
+        else
+            result = ++user.Followers;
+
+        await FileIO.WriteAsync(Constants.USERS_PATH, users);
+
+        return result;
     }
 
     public async Task<UserViewModel> UpdateAsync(long id, UserUpdateModel user, bool isUsedDeleted = false)
