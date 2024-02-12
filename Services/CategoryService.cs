@@ -59,9 +59,8 @@ public class CategoryService : ICategoryService
             ?? throw new Exception($"Category was not found with this id: {id}");
 
         existCategory.Id = id;
-        existCategory.IsDeleted = true;
         existCategory.Name = category.Name;
-        existCategory.DeletedAt = DateTime.UtcNow;
+        existCategory.UpdatedAt = DateTime.UtcNow;
         existCategory.Description = category.Description;
 
         await FileIO.WriteAsync(Constants.CATEGORIES_PATH, categories);

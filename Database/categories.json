@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "as",
+    "Description": "as",
+    "Id": 1,
+    "CreatedAt": "2024-02-12T06:59:39.4256892Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "2024-02-12T06:59:56.7307258Z",
+    "IsDeleted": true
+  },
+  {
+    "Name": "Programming",
+    "Description": "assssssssssssss",
+    "Id": 2,
+    "CreatedAt": "2024-02-12T07:01:54.354884Z",
+    "UpdatedAt": "2024-02-12T07:02:08.3633403Z",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
+  }
+]

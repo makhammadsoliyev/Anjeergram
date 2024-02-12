@@ -51,7 +51,7 @@ public class MainMenu
         postTagMenu = new PostTagMenu();
         commentMenu = new CommentMenu();
         messageMenu = new MessageMenu();
-        categoryMenu = new CategoryMenu();
+        categoryMenu = new CategoryMenu(categoryService);
         postLikeMenu = new PostLikeMenu(postLikeService);
         commentLikeMenu = new CommentLikeMenu();
         postCategoryMenu = new PostCategoryMenu();
