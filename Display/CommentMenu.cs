@@ -105,7 +105,7 @@ public class CommentMenu
 
         try
         {
-            var updatedCategory = await commentService.UpdateAsync(id, comment);
+            var updatedComment = await commentService.UpdateAsync(id, comment);
             AnsiConsole.MarkupLine("[green]Successfully updated...[/]");
         }
         catch (Exception ex)

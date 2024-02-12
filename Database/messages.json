@@ -1,0 +1,26 @@
+[
+  {
+    "SourceUserId": 2,
+    "TargetUserId": 1,
+    "Content": "as",
+    "EditedAt": "0001-01-01T00:00:00",
+    "Date": "0001-01-01T00:00:00",
+    "Id": 1,
+    "CreatedAt": "2024-02-12T09:12:14.6329589Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "2024-02-12T09:13:15.7763892Z",
+    "IsDeleted": true
+  },
+  {
+    "SourceUserId": 2,
+    "TargetUserId": 1,
+    "Content": "sa",
+    "EditedAt": "2024-02-12T09:13:39.1939047Z",
+    "Date": "2024-02-12T09:13:26.8043201Z",
+    "Id": 2,
+    "CreatedAt": "2024-02-12T09:13:26.806955Z",
+    "UpdatedAt": "2024-02-12T09:13:39.1972359Z",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
+  }
+]

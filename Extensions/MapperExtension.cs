@@ -160,6 +160,7 @@ public static class MapperExtension
     {
         return new Message()
         {
+            Date = model.Date,
             Content = model.Content,
             SourceUserId = model.SourceUserId,
             TargetUserId = model.TargetUserId,

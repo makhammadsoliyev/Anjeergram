@@ -1,6 +1,7 @@
 ﻿using Anjeergram.Models.Categories;
 using Anjeergram.Models.CommentLikes;
 using Anjeergram.Models.Comments;
+using Anjeergram.Models.Messages;
 using Anjeergram.Models.PostCategories;
 using Anjeergram.Models.PostLikes;
 using Anjeergram.Models.Posts;
@@ -13,6 +14,30 @@ namespace Anjeergram.Display;
 
 public class SelectionMenu
 {
+    public Table DataTable(string title, params MessageViewModel[] messages)
+    {
+        var table = new Table();
+
+        table.Title(title.ToUpper())
+            .BorderColor(Color.Blue)
+            .AsciiBorder();
+
+        table.AddColumn("ID");
+        table.AddColumn("SourceUser");
+        table.AddColumn("TargetUser");
+        table.AddColumn("Content");
+        table.AddColumn("EditedAt");
+        table.AddColumn("Date");
+
+        foreach (var message in messages)
+            table.AddRow(message.Id.ToString(), $"{message.SourceUser.FirstName} {message.SourceUser.LastName}", $"{message.TargetUser.FirstName} {message.TargetUser.LastName}", message.Content, message.EditedAt.ToString(), message.Date.ToString());
+
+        table.Border = TableBorder.Rounded;
+        table.Centered();
+
+        return table;
+    }
+
     public Table DataTable(string title, params CommentLikeViewModel[] likes)
     {
         var table = new Table();
