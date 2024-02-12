@@ -144,6 +144,7 @@ public class CommentService : ICommentService
         existComment.PostId = comment.PostId;
         existComment.Content = comment.Content;
         existComment.UpdatedAt = DateTime.UtcNow;
+        existComment.EditedAt = comment.EditedAt;
 
         await FileIO.WriteAsync(Constants.COMMENTS_PATH, comments);
 
