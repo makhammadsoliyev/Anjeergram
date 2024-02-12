@@ -1,0 +1,20 @@
+[
+  {
+    "PostId": 2,
+    "CategoryId": 2,
+    "Id": 1,
+    "CreatedAt": "2024-02-12T07:12:28.8922592Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "2024-02-12T07:12:55.4403534Z",
+    "IsDeleted": true
+  },
+  {
+    "PostId": 2,
+    "CategoryId": 2,
+    "Id": 2,
+    "CreatedAt": "2024-02-12T07:13:02.0187875Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
+  }
+]

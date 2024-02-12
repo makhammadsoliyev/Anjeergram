@@ -54,7 +54,7 @@ public class MainMenu
         categoryMenu = new CategoryMenu(categoryService);
         postLikeMenu = new PostLikeMenu(postLikeService);
         commentLikeMenu = new CommentLikeMenu();
-        postCategoryMenu = new PostCategoryMenu();
+        postCategoryMenu = new PostCategoryMenu(postCategoryService);
     }
 
     public async Task Main()

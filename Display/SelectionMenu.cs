@@ -1,4 +1,5 @@
 ﻿using Anjeergram.Models.Categories;
+using Anjeergram.Models.PostCategories;
 using Anjeergram.Models.PostLikes;
 using Anjeergram.Models.Posts;
 using Anjeergram.Models.Users;
@@ -8,6 +9,27 @@ namespace Anjeergram.Display;
 
 public class SelectionMenu
 {
+    public Table DataTable(string title, params PostCategoryViewModel[] postCategories)
+    {
+        var table = new Table();
+
+        table.Title(title.ToUpper())
+            .BorderColor(Color.Blue)
+            .AsciiBorder();
+
+        table.AddColumn("ID");
+        table.AddColumn("Post");
+        table.AddColumn("Category");
+
+        foreach (var pc in postCategories)
+            table.AddRow(pc.Id.ToString(), pc.Post.Title, pc.Category.Name);
+
+        table.Border = TableBorder.Rounded;
+        table.Centered();
+
+        return table;
+    }
+
     public Table DataTable(string title, params CategoryViewModel[] categories)
     {
         var table = new Table();
@@ -42,8 +64,8 @@ public class SelectionMenu
         table.AddColumn("Post");
         table.AddColumn("Date");
 
-        foreach (var t in likes)
-            table.AddRow(t.Id.ToString(), $"{t.User.FirstName} {t.User.LastName}", t.Post.Title, t.Date.ToString());
+        foreach (var like in likes)
+            table.AddRow(like.Id.ToString(), $"{like.User.FirstName} {like.User.LastName}", like.Post.Title, like.Date.ToString());
 
         table.Border = TableBorder.Rounded;
         table.Centered();
