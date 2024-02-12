@@ -1,9 +1,23 @@
-﻿using Spectre.Console;
+﻿using Anjeergram.Interfaces;
+using Anjeergram.Services;
+using Spectre.Console;
 
 namespace Anjeergram.Display;
 
 public class MainMenu
 {
+    private readonly ITagService tagService;
+    private readonly IUserService userService;
+    private readonly IPostService postService;
+    private readonly IFollowService followService;
+    private readonly IPostTagService postTagService;
+    private readonly ICommentService commentService;
+    private readonly IMessageService messageService;
+    private readonly ICategoryService categoryService;
+    private readonly IPostLikeService postLikeService;
+    private readonly ICommentLikeService commentLikeService;
+    private readonly IPostCategoryService postCategoryService;
+
     private readonly TagMenu tagMenu;
     private readonly UserMenu userMenu;
     private readonly PostMenu postMenu;
@@ -18,8 +32,20 @@ public class MainMenu
 
     public MainMenu()
     {
+        tagService = new TagService();
+        userService = new UserService();
+        categoryService = new CategoryService();
+        postService = new PostService(userService);
+        followService = new FollowService(userService);
+        messageService = new MessageService(userService);
+        postTagService = new PostTagService(tagService, postService);
+        commentService = new CommentService(postService, userService);
+        postLikeService = new PostLikeService(userService, postService);
+        commentLikeService = new CommentLikeService(commentService, userService);
+        postCategoryService = new PostCategoryService(categoryService, postService);
+
         tagMenu = new TagMenu();
-        userMenu = new UserMenu();
+        userMenu = new UserMenu(userService);
         postMenu = new PostMenu();
         followMenu = new FollowMenu();
         postTagMenu = new PostTagMenu();

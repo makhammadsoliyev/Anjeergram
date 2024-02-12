@@ -1,9 +1,37 @@
-﻿using Spectre.Console;
+﻿using Anjeergram.Models.Users;
+using Spectre.Console;
 
 namespace Anjeergram.Display;
 
 public class SelectionMenu
 {
+    public Table DataTable(string title, params UserViewModel[] users)
+    {
+        var table = new Table();
+
+        table.Title(title.ToUpper())
+            .BorderColor(Color.Blue)
+            .AsciiBorder();
+
+        table.AddColumn("ID");
+        table.AddColumn("FirstName");
+        table.AddColumn("LastName");
+        table.AddColumn("UserName");
+        table.AddColumn("Email");
+        table.AddColumn("PictureUrl");
+        table.AddColumn("Followers");
+        table.AddColumn("Followings");
+        table.AddColumn("Date");
+
+        foreach (var user in users)
+            table.AddRow(user.Id.ToString(), user.FirstName, user.LastName, user.UserName, user.Email, user.PictureUrl, user.Followers.ToString(), user.Followings.ToString(), user.Date.ToString());
+
+        table.Border = TableBorder.Rounded;
+        table.Centered();
+
+        return table;
+    }
+
     public string ShowSelectionMenu(string title, string[] options)
     {
         var selection = AnsiConsole.Prompt(

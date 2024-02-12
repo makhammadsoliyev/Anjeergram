@@ -1,0 +1,34 @@
+[
+  {
+    "FirstName": "as",
+    "LastName": "as",
+    "UserName": "asas",
+    "Email": "as@as.as",
+    "Password": "qw12qwwA",
+    "PictureUrl": "as",
+    "Followers": 0,
+    "Followings": 0,
+    "Date": "2024-02-12T06:12:37.9424449Z",
+    "Id": 1,
+    "CreatedAt": "2024-02-12T06:12:37.9425955Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "2024-02-12T06:14:11.0489385Z",
+    "IsDeleted": true
+  },
+  {
+    "FirstName": "Umidbek",
+    "LastName": "Maxammadsoliyev",
+    "UserName": "Hope",
+    "Email": "makhammadsoliyev@gmail.com",
+    "Password": "Umidjon2002",
+    "PictureUrl": "url",
+    "Followers": 0,
+    "Followings": 0,
+    "Date": "2024-02-12T06:13:35.3100879Z",
+    "Id": 2,
+    "CreatedAt": "2024-02-12T06:13:35.3100886Z",
+    "UpdatedAt": "2024-02-12T06:14:45.0506438Z",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
+  }
+]
