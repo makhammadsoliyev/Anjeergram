@@ -44,7 +44,7 @@ public class MainMenu
         commentLikeService = new CommentLikeService(commentService, userService);
         postCategoryService = new PostCategoryService(categoryService, postService);
 
-        tagMenu = new TagMenu();
+        tagMenu = new TagMenu(tagService);
         userMenu = new UserMenu(userService);
         postMenu = new PostMenu(postService);
         followMenu = new FollowMenu();

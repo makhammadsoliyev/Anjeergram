@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "as",
+    "Id": 1,
+    "CreatedAt": "2024-02-12T07:21:39.8533934Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "2024-02-12T07:21:50.9368795Z",
+    "IsDeleted": true
+  },
+  {
+    "Name": "dotnet",
+    "Id": 2,
+    "CreatedAt": "2024-02-12T07:22:02.3100423Z",
+    "UpdatedAt": "2024-02-12T07:22:24.8392662Z",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
+  }
+]
