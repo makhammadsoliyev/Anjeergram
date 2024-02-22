@@ -24,5 +24,18 @@
     "UpdatedAt": "2024-02-12T08:52:02.2638002Z",
     "DeletedAt": "0001-01-01T00:00:00",
     "IsDeleted": false
+  },
+  {
+    "UserId": 3,
+    "PostId": 4,
+    "Content": "ko'p parima",
+    "Likes": 1,
+    "EditedAt": "0001-01-01T00:00:00",
+    "Date": "2024-02-12T16:35:36.7167289Z",
+    "Id": 3,
+    "CreatedAt": "2024-02-12T16:35:36.7333002Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
   }
 ]

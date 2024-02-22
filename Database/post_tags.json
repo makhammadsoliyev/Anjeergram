@@ -16,5 +16,14 @@
     "UpdatedAt": "0001-01-01T00:00:00",
     "DeletedAt": "0001-01-01T00:00:00",
     "IsDeleted": false
+  },
+  {
+    "PostId": 4,
+    "TagId": 2,
+    "Id": 3,
+    "CreatedAt": "2024-02-12T16:37:55.2147371Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
   }
 ]

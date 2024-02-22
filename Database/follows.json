@@ -8,5 +8,15 @@
     "UpdatedAt": "0001-01-01T00:00:00",
     "DeletedAt": "0001-01-01T00:00:00",
     "IsDeleted": false
+  },
+  {
+    "FollowingUserId": 2,
+    "FollowedUserId": 3,
+    "Date": "2024-02-12T16:31:43.4330071Z",
+    "Id": 2,
+    "CreatedAt": "2024-02-12T16:31:43.4533031Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
   }
 ]

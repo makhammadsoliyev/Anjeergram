@@ -22,5 +22,17 @@
     "UpdatedAt": "2024-02-12T09:13:39.1972359Z",
     "DeletedAt": "0001-01-01T00:00:00",
     "IsDeleted": false
+  },
+  {
+    "SourceUserId": 2,
+    "TargetUserId": 3,
+    "Content": "salom",
+    "EditedAt": "0001-01-01T00:00:00",
+    "Date": "2024-02-12T16:36:39.8622795Z",
+    "Id": 3,
+    "CreatedAt": "2024-02-12T16:36:39.8904437Z",
+    "UpdatedAt": "0001-01-01T00:00:00",
+    "DeletedAt": "0001-01-01T00:00:00",
+    "IsDeleted": false
   }
 ]
